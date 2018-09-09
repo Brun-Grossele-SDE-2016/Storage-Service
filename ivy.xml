@@ -24,10 +24,7 @@
 	</info>
 		<dependencies>
         <!-- JAX-WS bundle dependency --> 
-        <dependency org="javax.ws.rs" name="javax.ws.rs-api" rev="2.1">
-      <artifact name="javax.ws.rs-api" type="jar"/>
-</dependency> 
-        <dependency org="com.sun.xml.ws" name="jaxws-rt" rev="2.2.10"/>
+        <dependency org="com.sun.xml.ws" name="jaxws-rt" rev="2.2.8"/>
         <!-- Manage JSON -->
         <dependency org="org.json" name="json" rev="20140107"/>
 	
