@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "WeatherImplService", targetNamespace = "http://ws.introsde/", wsdlLocation = "https://introsdemeteogrossele.herokuapp.com/ws/weather?wsdl")
+@WebServiceClient(name = "WeatherImplService", targetNamespace = "http://ws.introsde/", wsdlLocation = "http://localhost:9004/ws/weather?wsdl")
 public class WeatherImplService
     extends Service
 {
@@ -30,7 +30,7 @@ public class WeatherImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://introsdemeteogrossele.herokuapp.com/ws/weather?wsdl");
+            url = new URL("http://localhost:9004/ws/weather?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
