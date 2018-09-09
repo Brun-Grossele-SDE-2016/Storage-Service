@@ -43,15 +43,14 @@
          <dependency org="javax.xml.bind" name="jaxb-api" rev="2.3.0"/>
          <dependency org="com.sun.xml.bind" name="jaxb-impl" rev="2.3.0"/>
 <dependency org="com.sun.xml.bind" name="jaxb-xjc" rev="2.3.0"/>
-<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.9.2">
            <!--JACKSON dependencies-->
         <dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.9.2"/>
         <dependency org="com.fasterxml.jackson.module" name="jackson-module-jaxb-annotations" rev="2.9.2"/>
         <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.9.2"/>
         <dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.9.2"/>
         <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-json-provider" rev="2.9.2"/>
-<dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-base" rev="2.9.2"/>
-
+  <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-base" rev="2.9.2"/>
+    </dependencies>
 
 	
 </ivy-module>
