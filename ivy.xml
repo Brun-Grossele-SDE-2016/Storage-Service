@@ -51,7 +51,7 @@
         <dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.9.2"/>
         <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-json-provider" rev="2.9.2"/>
 <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-base" rev="2.9.2"/>
-    </dependencies>
+
 
 	
 </ivy-module>
