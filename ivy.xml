@@ -43,22 +43,22 @@
          <dependency org="javax.xml.bind" name="jaxb-api" rev="2.2.11"/>
          <dependency org="com.sun.xml.bind" name="jaxb-impl" rev="2.2.7"/>
 <dependency org="com.sun.xml.bind" name="jaxb-xjc" rev="2.2.7"/>
-<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.8.4">
+<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.4">
             <artifact name="jackson-core" type="jar"/>
         </dependency>
-        <dependency org="com.fasterxml.jackson.module" name="jackson-module-jaxb-annotations" rev="2.8.4">
+        <dependency org="com.fasterxml.jackson.module" name="jackson-module-jaxb-annotations" rev="2.4">
             <artifact name="jackson-module-jaxb-annotations" type="jar"/>
         </dependency>
-        <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.8.4">
+        <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.4">
             <artifact name="jackson-databind" type="jar"/>
         </dependency>
-        <dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.8.4">
+        <dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.4">
             <artifact name="jackson-annotations" type="jar"/>
         </dependency>
-        <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-json-provider" rev="2.8.4">
+        <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-json-provider" rev="2.4">
             <artifact name="jackson-jaxrs-json-provider" type="jar"/>
         </dependency>
-        <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-base" rev="2.8.4">
+        <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-base" rev="2.4">
             <artifact name="jackson-jaxrs-base" type="jar"/>
         </dependency>
 
