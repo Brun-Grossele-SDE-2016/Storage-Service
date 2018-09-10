@@ -29,6 +29,39 @@ public interface People {
      * 
      * @param personId
      * @return
+     *     returns java.util.List<knowyourtown.localdb.webservice.Place>
+     */
+    @WebMethod
+    @WebResult(name = "placeList", targetNamespace = "")
+    @RequestWrapper(localName = "readLastPlace", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadLastPlace")
+    @ResponseWrapper(localName = "readLastPlaceResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadLastPlaceResponse")
+    @Action(input = "http://webservice.localdb.knowyourtown/People/readLastPlaceRequest", output = "http://webservice.localdb.knowyourtown/People/readLastPlaceResponse")
+    public List<Place> readLastPlace(
+        @WebParam(name = "personId", targetNamespace = "")
+        int personId);
+
+    /**
+     * 
+     * @param personId
+     * @param placeTypeId
+     * @return
+     *     returns java.util.List<knowyourtown.localdb.webservice.Place>
+     */
+    @WebMethod
+    @WebResult(name = "placeList", targetNamespace = "")
+    @RequestWrapper(localName = "getPlaceHistory", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.GetPlaceHistory")
+    @ResponseWrapper(localName = "getPlaceHistoryResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.GetPlaceHistoryResponse")
+    @Action(input = "http://webservice.localdb.knowyourtown/People/getPlaceHistoryRequest", output = "http://webservice.localdb.knowyourtown/People/getPlaceHistoryResponse")
+    public List<Place> getPlaceHistory(
+        @WebParam(name = "personId", targetNamespace = "")
+        int personId,
+        @WebParam(name = "placeTypeId", targetNamespace = "")
+        String placeTypeId);
+
+    /**
+     * 
+     * @param personId
+     * @return
      *     returns knowyourtown.localdb.webservice.Person
      */
     @WebMethod
@@ -69,72 +102,6 @@ public interface People {
 
     /**
      * 
-     * @param person
-     * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(name = "personId", targetNamespace = "")
-    @RequestWrapper(localName = "updatePerson", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.UpdatePerson")
-    @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.UpdatePersonResponse")
-    @Action(input = "http://webservice.localdb.knowyourtown/People/updatePersonRequest", output = "http://webservice.localdb.knowyourtown/People/updatePersonResponse")
-    public int updatePerson(
-        @WebParam(name = "person", targetNamespace = "http://webservice.localdb.knowyourtown/")
-        Person person);
-
-    /**
-     * 
-     * @param personId
-     * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(name = "result", targetNamespace = "")
-    @RequestWrapper(localName = "deletePerson", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.DeletePerson")
-    @ResponseWrapper(localName = "deletePersonResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.DeletePersonResponse")
-    @Action(input = "http://webservice.localdb.knowyourtown/People/deletePersonRequest", output = "http://webservice.localdb.knowyourtown/People/deletePersonResponse")
-    public int deletePerson(
-        @WebParam(name = "personId", targetNamespace = "")
-        int personId);
-
-    /**
-     * 
-     * @param placeId
-     * @param personId
-     * @param placeTypeId
-     * @return
-     *     returns knowyourtown.localdb.webservice.Place
-     */
-    @WebMethod
-    @WebResult(name = "place", targetNamespace = "")
-    @RequestWrapper(localName = "readPlace", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadPlace")
-    @ResponseWrapper(localName = "readPlaceResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadPlaceResponse")
-    @Action(input = "http://webservice.localdb.knowyourtown/People/readPlaceRequest", output = "http://webservice.localdb.knowyourtown/People/readPlaceResponse")
-    public Place readPlace(
-        @WebParam(name = "personId", targetNamespace = "")
-        int personId,
-        @WebParam(name = "placeTypeId", targetNamespace = "")
-        String placeTypeId,
-        @WebParam(name = "placeId", targetNamespace = "")
-        int placeId);
-
-    /**
-     * 
-     * @param personId
-     * @return
-     *     returns java.util.List<knowyourtown.localdb.webservice.Place>
-     */
-    @WebMethod
-    @WebResult(name = "placeList", targetNamespace = "")
-    @RequestWrapper(localName = "readLastPlace", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadLastPlace")
-    @ResponseWrapper(localName = "readLastPlaceResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadLastPlaceResponse")
-    @Action(input = "http://webservice.localdb.knowyourtown/People/readLastPlaceRequest", output = "http://webservice.localdb.knowyourtown/People/readLastPlaceResponse")
-    public List<Place> readLastPlace(
-        @WebParam(name = "personId", targetNamespace = "")
-        int personId);
-
-    /**
-     * 
      * @param personId
      * @param placeTypeId
      * @return
@@ -146,24 +113,6 @@ public interface People {
     @ResponseWrapper(localName = "readLastPlaceByTypeResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadLastPlaceByTypeResponse")
     @Action(input = "http://webservice.localdb.knowyourtown/People/readLastPlaceByTypeRequest", output = "http://webservice.localdb.knowyourtown/People/readLastPlaceByTypeResponse")
     public Place readLastPlaceByType(
-        @WebParam(name = "personId", targetNamespace = "")
-        int personId,
-        @WebParam(name = "placeTypeId", targetNamespace = "")
-        String placeTypeId);
-
-    /**
-     * 
-     * @param personId
-     * @param placeTypeId
-     * @return
-     *     returns java.util.List<knowyourtown.localdb.webservice.Place>
-     */
-    @WebMethod
-    @WebResult(name = "placeList", targetNamespace = "")
-    @RequestWrapper(localName = "getPlaceHistory", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.GetPlaceHistory")
-    @ResponseWrapper(localName = "getPlaceHistoryResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.GetPlaceHistoryResponse")
-    @Action(input = "http://webservice.localdb.knowyourtown/People/getPlaceHistoryRequest", output = "http://webservice.localdb.knowyourtown/People/getPlaceHistoryResponse")
-    public List<Place> getPlaceHistory(
         @WebParam(name = "personId", targetNamespace = "")
         int personId,
         @WebParam(name = "placeTypeId", targetNamespace = "")
@@ -405,5 +354,56 @@ public interface People {
         int personId,
         @WebParam(name = "title", targetNamespace = "")
         String title);
+
+    /**
+     * 
+     * @param person
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(name = "personId", targetNamespace = "")
+    @RequestWrapper(localName = "updatePerson", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.UpdatePerson")
+    @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.UpdatePersonResponse")
+    @Action(input = "http://webservice.localdb.knowyourtown/People/updatePersonRequest", output = "http://webservice.localdb.knowyourtown/People/updatePersonResponse")
+    public int updatePerson(
+        @WebParam(name = "person", targetNamespace = "http://webservice.localdb.knowyourtown/")
+        Person person);
+
+    /**
+     * 
+     * @param personId
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(name = "result", targetNamespace = "")
+    @RequestWrapper(localName = "deletePerson", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.DeletePerson")
+    @ResponseWrapper(localName = "deletePersonResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.DeletePersonResponse")
+    @Action(input = "http://webservice.localdb.knowyourtown/People/deletePersonRequest", output = "http://webservice.localdb.knowyourtown/People/deletePersonResponse")
+    public int deletePerson(
+        @WebParam(name = "personId", targetNamespace = "")
+        int personId);
+
+    /**
+     * 
+     * @param placeId
+     * @param personId
+     * @param placeTypeId
+     * @return
+     *     returns knowyourtown.localdb.webservice.Place
+     */
+    @WebMethod
+    @WebResult(name = "place", targetNamespace = "")
+    @RequestWrapper(localName = "readPlace", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadPlace")
+    @ResponseWrapper(localName = "readPlaceResponse", targetNamespace = "http://webservice.localdb.knowyourtown/", className = "knowyourtown.localdb.webservice.ReadPlaceResponse")
+    @Action(input = "http://webservice.localdb.knowyourtown/People/readPlaceRequest", output = "http://webservice.localdb.knowyourtown/People/readPlaceResponse")
+    public Place readPlace(
+        @WebParam(name = "personId", targetNamespace = "")
+        int personId,
+        @WebParam(name = "placeTypeId", targetNamespace = "")
+        String placeTypeId,
+        @WebParam(name = "placeId", targetNamespace = "")
+        int placeId);
 
 }
